@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: IcoMoon.io -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="500.00000000000006"
+   height="500"
+   viewBox="0 0 500 500"
+   fill="#000000"
+   id="svg3033"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="icon-bell.svg">
+  <metadata
+     id="metadata3041">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3039" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="711"
+     id="namedview3037"
+     showgrid="false"
+     inkscape:zoom="1.09"
+     inkscape:cx="89.449541"
+     inkscape:cy="250"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3033" />
+  <path
+     d="M 366.25,212.825c-57.00-122.675-86.625-169.275-179.775-167.325c-33.175,0.675-25.20-24.025-50.50-14.65 C 110.70,40.20, 132.40,53.925, 106.525,75.15c-72.55,59.55-65.875,114.65-32.225,246.00c 14.20,55.30-34.175,58.025-15.05,111.65 c 13.975,39.075, 116.975,55.475, 225.65,15.125c 108.675-40.30, 177.25-120.325, 163.275-159.45C 429.05,234.875, 390.275,264.475, 366.25,212.825z M 273.10,414.90 c-97.025,36.00-176.80,14.825-180.175,5.425c-5.80-16.225, 31.325-70.40, 142.275-111.575c 110.95-41.175, 172.875-25.90, 179.35-7.775 C 418.375,311.675, 370.175,378.875, 273.10,414.90z M 241.925,327.55c-50.75,18.825-86.00,40.35-108.825,59.75 c 16.075,14.60, 46.15,18.15, 76.15,7.025c 38.175-14.175, 61.625-46.70, 52.35-72.625c-0.10-0.325-0.275-0.60-0.40-0.90 C 254.95,322.825, 248.525,325.075, 241.925,327.55z"
+     id="path3035"
+     style="fill:#d85e5b;fill-opacity:1" />
+</svg>
