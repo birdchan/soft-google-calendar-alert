@@ -1,0 +1,27 @@
+{
+  "name": "Better Google Calendar Alert",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Replaces the Google Calendar popup with something less intrusive",
+  "homepage_url": "http://extensionizr.com",
+  "icons": {
+    "16": "icons/gcal-alert16.png",
+    "32": "icons/gcal-alert32.png",
+    "48": "icons/gcal-alert48.png",
+    "64": "icons/gcal-alert64.png",
+    "128": "icons/gcal-alert128.png"
+  },
+  "content_scripts": [{
+    "matches": ["https://www.google.com/calendar/*", "https://calendar.google.com/calendar/*"],
+    "css": ["css/gcal-alert.css"],
+    "js": ["js/gcal-alert.js"]
+  }],
+  "web_accessible_resources": [
+    "favicon.ico",
+    "icon-bell.svg",
+    "sound-notification.ogg"
+  ],
+  "permissions": [
+    "activeTab"
+  ]
+}
