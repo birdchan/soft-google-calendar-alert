@@ -1,13 +1,14 @@
-chrome.extension.sendMessage({}, function(response) {
-	var readyStateCheckInterval = setInterval(function() {
-		if (document.readyState === "complete") {
-			clearInterval(readyStateCheckInterval);
 
-			// ----------------------------------------------------------
-			// This part of the script triggers when page is done loading
-			console.log("Hello. This message was sent from scripts/inject.js");
-			// ----------------------------------------------------------
+function gentleAlert(msg) {
+	audioNotification = chrome.runtime.getURL("notification.ogg");
+	console.log('hi');
 
-		}
-	}, 10);
-});
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+	// your code here
+	console.log('hello');
+
+	// it looks like the new google calendar isn't affected by this...
+	window.alert = gentleAlert;
+ }, false);

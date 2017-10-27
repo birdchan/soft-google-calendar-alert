@@ -13,13 +13,14 @@
   },
   "content_scripts": [{
     "matches": ["https://www.google.com/calendar/*", "https://calendar.google.com/calendar/*"],
-    "css": ["css/gcal-alert.css"],
-    "js": ["js/gcal-alert.js"]
+    "js": ["js/bootstrap.js"]
   }],
   "web_accessible_resources": [
     "favicon.ico",
     "icon-bell.svg",
-    "sound-notification.ogg"
+    "sound-notification.ogg",
+    "css/gcal-alert.css",
+    "js/gcal-alert.js"
   ],
   "permissions": [
     "activeTab"
