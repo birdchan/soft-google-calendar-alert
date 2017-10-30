@@ -2,6 +2,7 @@
 let currentScript = document.currentScript;
 let gCalAlertModal = undefined;
 let gNotificationAudio = currentScript.dataset.notificationAudio;
+let gBellIcon = currentScript.dataset.bellIcon;
 
 function GCalAlertModal() {
 	this.queue = [];
@@ -28,16 +29,19 @@ GCalAlertModal.prototype.renderModal = function() {
 };
 
 GCalAlertModal.prototype.createModal = function(msg) {
-    let span = document.createElement("span");
-    span.id = "gentle-alerts-modal";
-    span.innerHTML = "\
-		<div id=\"gentle-alerts-modal-content\">\
-		<p id=\"gentle-alerts-modal-content-text\"></p>\
-		</div>";
-    document.documentElement.appendChild(span);
-	let modalContent = document.getElementById("gentle-alerts-modal-content-text");
+    let modal = document.createElement("span");
+    modal.id = "soft-alerts-modal";
+    modal.innerHTML = '\
+		<div class=\"content\">\
+            <image class="icon" />\
+    		<p id=\"soft-alerts-modal-content-text\"></p>\
+        </div>';
+    document.documentElement.appendChild(modal);
+    let icon = modal.querySelector('.icon');
+    icon.src = gBellIcon;
+	let modalContent = document.getElementById("soft-alerts-modal-content-text");
 	modalContent.textContent = msg;
-    this.modalDomNode = document.getElementById("gentle-alerts-modal");
+    this.modalDomNode = document.getElementById("soft-alerts-modal");
     this.modalDomNode.style.display = "block";
 };
 
@@ -50,7 +54,7 @@ GCalAlertModal.prototype.deleteModal = function() {
 };
 
 GCalAlertModal.prototype.notify = function(){
-	var audio = new Audio(gNotificationAudio);
+	let audio = new Audio(gNotificationAudio);
 	audio.play();
 };
 

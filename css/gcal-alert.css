@@ -1,4 +1,4 @@
-#gentle-alerts-modal {
+#soft-alerts-modal {
   display: none;
   position: fixed;
   z-index: 2147483647;
@@ -11,14 +11,27 @@
   background-color: rgba(0,0,0,0.4);
 }
 
-#gentle-alerts-modal-content {
+#soft-alerts-modal .content {
   position: absolute;
   top: 50%;
   left: 50%;
+  text-align: center;
   transform: translate(-50%, -50%);
   background-color: #fefefe;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 500px;
   white-space: pre-line;
+}
+
+#soft-alerts-modal .icon {
+  width: 200px;
+  height: 120px;
+  -webkit-border-radius: 40px;
+  border-radius: 40px;
+  border-radius: 50%;
+  margin: 20px auto;
+  padding: 0;
+  position: relative;
+  box-sizing: content-box;
 }

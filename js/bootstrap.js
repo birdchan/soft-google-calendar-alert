@@ -2,6 +2,7 @@
 var s = document.createElement("script");
 s.src = chrome.runtime.getURL("js/gcal-alert.js");
 s.dataset.notificationAudio = chrome.runtime.getURL("sound-notification.ogg");
+s.dataset.bellIcon = chrome.runtime.getURL("icons/icon-bell.svg");
 document.head.appendChild(s);
 
 // Install CSS

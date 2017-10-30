@@ -17,10 +17,10 @@
   }],
   "web_accessible_resources": [
     "favicon.ico",
-    "icon-bell.svg",
     "sound-notification.ogg",
     "css/gcal-alert.css",
-    "js/gcal-alert.js"
+    "js/gcal-alert.js",
+    "icons/icon-bell.svg"
   ],
   "permissions": [
     "activeTab"
