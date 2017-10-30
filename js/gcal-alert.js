@@ -16,6 +16,7 @@ GCalAlertModal.prototype.receiveMsg = function(msg) {
 
 GCalAlertModal.prototype.renderModal = function() {
     if (this.modalDomNode) {
+        this.renderMoreText();
 		return;  // modal already exists, wait for user to close it first
     }
     let msg = this.queue.shift();
@@ -34,15 +35,25 @@ GCalAlertModal.prototype.createModal = function(msg) {
     modal.innerHTML = '\
 		<div class=\"content\">\
             <image class="icon" />\
-    		<p id=\"soft-alerts-modal-content-text\"></p>\
+            <p class="text"></p>\
+            <p class="more"></p>\
         </div>';
     document.documentElement.appendChild(modal);
     let icon = modal.querySelector('.icon');
     icon.src = gBellIcon;
-	let modalContent = document.getElementById("soft-alerts-modal-content-text");
+	let modalContent = modal.querySelector(".text");
 	modalContent.textContent = msg;
     this.modalDomNode = document.getElementById("soft-alerts-modal");
     this.modalDomNode.style.display = "block";
+    this.renderMoreText();
+};
+
+GCalAlertModal.prototype.renderMoreText = function() {
+    let numOfMsg = this.queue.length;
+    if (numOfMsg > 0) {
+        let moreNode = this.modalDomNode.querySelector(".more");
+        moreNode.textContent = numOfMsg + " more alert(s)";
+    }
 };
 
 GCalAlertModal.prototype.deleteModal = function() {

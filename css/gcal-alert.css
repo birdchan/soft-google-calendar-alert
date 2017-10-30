@@ -35,3 +35,8 @@
   position: relative;
   box-sizing: content-box;
 }
+
+#soft-alerts-modal .more {
+  color: red;
+  font-size: 0.8em;
+}
