@@ -11,7 +11,6 @@ function GCalAlertModal() {
 
 GCalAlertModal.prototype.receiveMsg = function(msg) {
 	this.queue.push(msg);
-	console.log('receiveMsg::queue:' + this.queue);
 }
 
 GCalAlertModal.prototype.renderModal = function() {
@@ -52,7 +51,13 @@ GCalAlertModal.prototype.renderMoreText = function() {
     let numOfMsg = this.queue.length;
     if (numOfMsg > 0) {
         let moreNode = this.modalDomNode.querySelector(".more");
-        moreNode.textContent = numOfMsg + " more alert(s)";
+        let text = undefined;
+        if (numOfMsg == 1) {
+            text = numOfMsg + " more alert";
+        } else {
+            text = numOfMsg + " more alerts";
+        }
+        moreNode.textContent = text;
     }
 };
 
@@ -85,7 +90,6 @@ GCalAlertModal.prototype.registerModalClose = function() {
     function overrideEventCallback(verificationFunc, windowEvent) {
         originalCallbacks[windowEvent] = window[windowEvent];  // backup
         window[windowEvent] = function(eventObject) {
-			console.log('eventObject: ' + eventObject)
 			if (!verificationFunc(eventObject)) {
 				return;  // false alarm
 			}
@@ -105,7 +109,6 @@ GCalAlertModal.prototype.registerModalClose = function() {
 };
 
 function gCalAlert(msg) {
-	console.log('msg: ' + msg);
 	if (gCalAlertModal === undefined) {
 		gCalAlertModal = new GCalAlertModal();
 	}
