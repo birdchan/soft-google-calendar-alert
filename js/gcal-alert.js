@@ -36,7 +36,8 @@ GCalAlertModal.prototype.createModal = function(msg) {
             <image class="icon" />\
             <p class="text"></p>\
             <p class="more"></p>\
-        </div>';
+            <p class="dismiss_container"><span class="dismiss">Dismiss</span></p>\
+            </div>';
     document.documentElement.appendChild(modal);
     let icon = modal.querySelector('.icon');
     icon.src = gBellIcon;
@@ -78,7 +79,9 @@ GCalAlertModal.prototype.registerModalClose = function() {
     let self = this;
     let originalCallbacks = {};
     function isOnclick(onClickEvent) {
-        return onClickEvent.target == self.modalDomNode;
+        let dismiss_btn = self.modalDomNode.querySelector('.dismiss');
+        return (onClickEvent.target == self.modalDomNode ||  // the blurred area
+            onClickEvent.target == dismiss_btn);
     }
     function isOnKeyUp(onKeyUpEvent) {
 		let enterCode = 13;

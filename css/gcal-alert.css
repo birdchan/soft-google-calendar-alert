@@ -19,7 +19,8 @@
   transform: translate(-50%, -50%);
   background-color: #fefefe;
   padding: 20px;
-  border: 1px solid #888;
+  border-radius: 30px;
+  box-shadow: 0 0 10px 10px #fefefe;
   width: 500px;
   white-space: pre-line;
 }
@@ -39,4 +40,16 @@
 #soft-alerts-modal .more {
   color: red;
   font-size: 0.8em;
+}
+
+#soft-alerts-modal .dismiss_container {
+  margin-top: 30px;
+}
+
+#soft-alerts-modal .dismiss {
+  background-color: #d85e5c;
+  color: #fefffe;
+  padding: 5px 20px;
+  border-radius: 10px;
+  cursor: pointer;
 }
