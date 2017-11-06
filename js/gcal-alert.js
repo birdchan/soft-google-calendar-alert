@@ -3,10 +3,13 @@ let currentScript = document.currentScript;
 let gCalAlertModal = undefined;
 let gNotificationAudio = currentScript.dataset.notificationAudio;
 let gBellIcon = currentScript.dataset.bellIcon;
+let gNotificationOnInterval = 10000; // notify every 10 sec
+let gNotificationOffInterval = 3000;  // for each notification, switch title back after 3 sec
 
 function GCalAlertModal() {
 	this.queue = [];
-	this.modalDomNode = undefined;
+    this.modalDomNode = undefined;
+    this.notification_interval_id = undefined;
 }
 
 GCalAlertModal.prototype.receiveMsg = function(msg) {
@@ -68,11 +71,25 @@ GCalAlertModal.prototype.deleteModal = function() {
     }
     this.modalDomNode.parentNode.removeChild(this.modalDomNode);
     this.modalDomNode = undefined;
+    if (this.notification_interval_id) {
+        clearInterval(this.notification_interval_id);
+        this.notification_interval_id = undefined;
+    }
 };
 
 GCalAlertModal.prototype.notify = function(){
-	let audio = new Audio(gNotificationAudio);
-	audio.play();
+    if (this.notification_interval_id) {
+        return;
+    }
+    this.notification_interval_id = setInterval(function() {
+        let audio = new Audio(gNotificationAudio);
+        audio.play();
+        let original = document.title;
+        document.title = "Alert";
+        setTimeout(function() {
+            document.title = original;
+        }, gNotificationOffInterval);
+    }, gNotificationOnInterval);
 };
 
 GCalAlertModal.prototype.registerModalClose = function() {
