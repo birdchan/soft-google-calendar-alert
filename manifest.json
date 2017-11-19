@@ -1,6 +1,6 @@
 {
   "name": "Soft Google Calendar Alert",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "manifest_version": 2,
   "description": "Soft Google Calendar popup",
   "homepage_url": "https://github.com/birdchan/soft-google-calendar-alert",

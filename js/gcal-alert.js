@@ -3,8 +3,8 @@ let currentScript = document.currentScript;
 let gCalAlertModal = undefined;
 let gNotificationAudio = currentScript.dataset.notificationAudio;
 let gBellIcon = currentScript.dataset.bellIcon;
-let gNotificationOnInterval = 10000; // notify every 10 sec
-let gNotificationOffInterval = 3000;  // for each notification, switch title back after 3 sec
+let gNotificationOnInterval = 5 * 60 * 1000; // notify every 5 min
+let gNotificationOffInterval = 5000;  // for each notification, switch title back after 5 sec
 
 function GCalAlertModal() {
 	this.queue = [];
